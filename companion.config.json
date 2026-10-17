@@ -24,6 +24,15 @@
       "description": "New chat in the app. An optional custom shortcut can replace the default."
     },
     {
+      "id": "usage",
+      "name": "Usage",
+      "glyph": "tradeorders",
+      "theme": "emerald",
+      "operation": "url",
+      "url": "https://chatgpt.com/settings/usage",
+      "description": "Open the official account usage page in your default browser. Sign in there if needed."
+    },
+    {
       "id": "commands",
       "name": "Commands",
       "glyph": "palette",
@@ -145,7 +154,7 @@
   ],
   "uuid": "com.dailyops.chatgpt.v1",
   "name": "ChatGPT Controls",
-  "version": "1.0.0.0",
+  "version": "1.1.0.0",
   "profile": "profiles/ChatGPT",
   "selector": {
     "names": [
@@ -153,5 +162,32 @@
       "Codex"
     ],
     "path": "(?:OpenAI\\.(?:Codex|ChatGPT)|[\\\\/]ChatGPT[\\\\/])"
+  },
+  "design": {
+    "id": "chatgpt",
+    "name": "ChatGPT",
+    "background": "#101010",
+    "surface": "#1f1f1f",
+    "ink": "#eeeeee",
+    "accent": "#a6d7c6",
+    "border": "#414141",
+    "radius": 18
+  },
+  "layout": {
+    "0,0": "back",
+    "1,0": "newchat",
+    "2,0": "usage",
+    "3,0": "commands",
+    "4,0": "find",
+    "0,1": "models",
+    "1,1": "sidebar",
+    "2,1": "previous",
+    "3,1": "next",
+    "4,1": "settings",
+    "0,2": "shortcuts",
+    "1,2": "zoomin",
+    "2,2": "zoomout",
+    "3,2": "resetzoom",
+    "4,2": "copy"
   }
 }
