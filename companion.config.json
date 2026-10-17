@@ -1,0 +1,157 @@
+{
+  "id": "chatgpt",
+  "folder": "CHATGPT",
+  "repo": "streamdeck_chatgpt",
+  "app": "ChatGPT",
+  "glyph": "sparkchat",
+  "theme": "emerald",
+  "reference": "https://learn.chatgpt.com/docs/reference/commands",
+  "commands": [
+    {
+      "id": "back",
+      "name": "Back",
+      "glyph": "back",
+      "theme": "gold",
+      "description": "Return to the main Stream Deck keys.",
+      "operation": "back"
+    },
+    {
+      "id": "newchat",
+      "name": "New chat",
+      "glyph": "sparkchat",
+      "theme": "emerald",
+      "shortcut": "Ctrl+N",
+      "description": "New chat in the app. An optional custom shortcut can replace the default."
+    },
+    {
+      "id": "commands",
+      "name": "Commands",
+      "glyph": "palette",
+      "theme": "cosmic",
+      "shortcut": "Ctrl+Shift+P",
+      "description": "Commands in the app. An optional custom shortcut can replace the default."
+    },
+    {
+      "id": "find",
+      "name": "Find in chat",
+      "glyph": "search",
+      "theme": "ocean",
+      "shortcut": "Ctrl+F",
+      "description": "Find in chat in the app. An optional custom shortcut can replace the default."
+    },
+    {
+      "id": "models",
+      "name": "Models",
+      "glyph": "grid",
+      "theme": "electric",
+      "shortcut": "Ctrl+Shift+M",
+      "description": "Models in the app. An optional custom shortcut can replace the default."
+    },
+    {
+      "id": "sidebar",
+      "name": "Sidebar",
+      "glyph": "sidebar",
+      "theme": "indigo",
+      "shortcut": "Ctrl+B",
+      "description": "Sidebar in the app. An optional custom shortcut can replace the default."
+    },
+    {
+      "id": "previous",
+      "name": "Previous chat",
+      "glyph": "pull",
+      "theme": "violet",
+      "shortcut": "Ctrl+Shift+Tab",
+      "description": "Previous chat in the app. An optional custom shortcut can replace the default."
+    },
+    {
+      "id": "next",
+      "name": "Next chat",
+      "glyph": "push",
+      "theme": "azure",
+      "shortcut": "Ctrl+Tab",
+      "description": "Next chat in the app. An optional custom shortcut can replace the default."
+    },
+    {
+      "id": "settings",
+      "name": "Settings",
+      "glyph": "gear",
+      "theme": "peach",
+      "shortcut": "Ctrl+,",
+      "description": "Settings in the app. An optional custom shortcut can replace the default."
+    },
+    {
+      "id": "shortcuts",
+      "name": "Shortcuts",
+      "glyph": "keyboard",
+      "theme": "cyan",
+      "shortcut": "Ctrl+/",
+      "description": "Shortcuts in the app. An optional custom shortcut can replace the default."
+    },
+    {
+      "id": "zoomin",
+      "name": "Zoom in",
+      "glyph": "search",
+      "theme": "tropical",
+      "shortcut": "Ctrl+Plus",
+      "description": "Zoom in in the app. An optional custom shortcut can replace the default."
+    },
+    {
+      "id": "zoomout",
+      "name": "Zoom out",
+      "glyph": "search",
+      "theme": "sky",
+      "shortcut": "Ctrl+-",
+      "description": "Zoom out in the app. An optional custom shortcut can replace the default."
+    },
+    {
+      "id": "resetzoom",
+      "name": "Reset zoom",
+      "glyph": "target",
+      "theme": "lemonade",
+      "shortcut": "Ctrl+0",
+      "description": "Reset zoom in the app. An optional custom shortcut can replace the default."
+    },
+    {
+      "id": "copy",
+      "name": "Copy",
+      "glyph": "copy",
+      "theme": "violet",
+      "shortcut": "Ctrl+C",
+      "description": "Copy in the app. An optional custom shortcut can replace the default."
+    },
+    {
+      "id": "paste",
+      "name": "Paste",
+      "glyph": "paste",
+      "theme": "crimson",
+      "shortcut": "Ctrl+V",
+      "description": "Paste in the app. An optional custom shortcut can replace the default."
+    },
+    {
+      "id": "focus",
+      "name": "Focus app",
+      "glyph": "target",
+      "theme": "ocean",
+      "description": "Bring the verified app window to the front.",
+      "operation": "focus"
+    },
+    {
+      "id": "shortcut",
+      "name": "Custom shortcut",
+      "glyph": "keyboard",
+      "theme": "electric",
+      "description": "Set your own app shortcut, for example Ctrl+Shift+N."
+    }
+  ],
+  "uuid": "com.dailyops.chatgpt.v1",
+  "name": "ChatGPT Controls",
+  "version": "1.0.0.0",
+  "profile": "profiles/ChatGPT",
+  "selector": {
+    "names": [
+      "ChatGPT",
+      "Codex"
+    ],
+    "path": "(?:OpenAI\\.(?:Codex|ChatGPT)|[\\\\/]ChatGPT[\\\\/])"
+  }
+}
