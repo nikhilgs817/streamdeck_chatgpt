@@ -1,26 +1,62 @@
 # ChatGPT Controls
 
-Unofficial Windows companion for Elgato Stream Deck. Version 1.1.1.0.
+Unofficial Elgato Stream Deck plugin for the **ChatGPT desktop app on Windows** (Chat, Work and Codex). Version 1.2.0.0.
 
-App navigation, new chat, search, settings, editing and zoom controls. **Usage** opens the [official account usage page](https://chatgpt.com/settings/usage) in your default browser. Sign in there if needed; the plugin does not read or store usage credentials.
+Keys use the app's own documented keyboard shortcuts and `codex://` app links, so they act **inside the desktop app**. Every icon is animated.
 
 ![Animated keys](docs/images/deck.gif)
 
 ## Install in three steps
 
-1. Download **ChatGPTControls-Installer-1.1.1.0.zip** from [Releases](https://github.com/nikhilgs817/streamdeck_chatgpt/releases/latest).
+1. Download **ChatGPTControls-Installer-1.2.0.0.zip** from [Releases](https://github.com/nikhilgs817/streamdeck_chatgpt/releases/latest).
 2. Right-click the ZIP, choose **Extract All**, and open the extracted folder.
-3. Double-click **Install-ChatGPTControls.cmd**. Wait for the installation success message; Stream Deck restarts automatically.
+3. Double-click **Install-ChatGPTControls.cmd**. Wait for the success message; Stream Deck restarts automatically.
 
-No Git, Node.js or build commands are required. Windows Daily Toolkit is included for automatic app switching. The installer verifies files, backs up your setup, preserves existing layouts/settings and rolls back failed updates. [Full installation, update and recovery guide](docs/INSTALL.md).
+No Git, Node.js or build commands are needed. Windows Daily Toolkit is included for automatic app switching. The installer verifies files, backs up your setup, keeps your layouts and settings, and rolls back a failed update. [Full installation, update and recovery guide](docs/INSTALL.md).
 
-## Use
+## The keys
 
-Requires Windows 10/11 64-bit and Stream Deck 7.1+. Open or focus ChatGPT to show its keys automatically; **Back** returns to the main keys. Profiles also work when selected manually. Configure shortcuts and appearance by selecting a key in Stream Deck. Existing action IDs remain compatible.
+**Page 1 (ChatGPT):** Back · New chat · Temporary · Search · Usage / Models · Projects · Sidebar · Previous · Next / Chat · Work · Codex · Dictate · More
+
+**Page 2 (More):** Main · Settings · Shortcuts · Find · Quick chat / Archive · Pin · Rename · Copy link · Skills / Scheduled · Full view · Zoom in · Zoom out · Reset zoom
+
+Also in the action list: Go back, Go forward, Copy, Paste, Undo, Redo, Full screen, Focus app and Custom key.
+
+| Key | What it does | How |
+|---|---|---|
+| New chat | Start a chat | `codex://threads/new` app link |
+| Settings, Skills, Scheduled | Open that page in the app | `codex://settings`, `codex://skills`, `codex://automations` |
+| Usage | Usage and limits in the app settings | `codex://settings/usage` |
+| Temporary, Quick chat | Unsaved chat / quick chat | Ctrl+Shift+N, Ctrl+Alt+N |
+| Search | Command menu (chats and commands) | Ctrl+K |
+| Models, Projects | Model picker / project picker | Ctrl+Shift+M, Ctrl+Alt+Shift+O |
+| Chat, Work, Codex | Switch mode | Alt+1, Alt+2, Alt+3 |
+| Sidebar, Previous, Next | Sidebar / previous or next chat | Ctrl+B, Ctrl+Shift+Tab, Ctrl+Tab |
+| Archive, Pin, Rename, Copy link | Current chat | Ctrl+Shift+A, Ctrl+Alt+P, Ctrl+Alt+R, Ctrl+Alt+L |
+| Full view, Find, Shortcuts | | Ctrl+Shift+F, Ctrl+F, Ctrl+/ |
+| Zoom in/out, Reset zoom | Text size | Ctrl+=, Ctrl+-, Ctrl+0 |
+| Dictate | Windows voice typing into the message box | Win+H |
+| Custom key | Any shortcut you type, e.g. `Ctrl+Alt+1` or `Win+H` | |
+
+App links start ChatGPT if it is closed. Shortcut keys first bring ChatGPT to the front and **send nothing if another window stays in front**. If you changed a shortcut under **Settings › Keyboard Shortcuts** in the app, enter the same shortcut in the key's settings. The plugin never reads or stores your account data.
+
+Open or focus ChatGPT to show these keys automatically (needs Windows Daily Toolkit); **Back** returns to your main keys. **More** and **Main** switch between the two pages.
 
 ## Appearance
 
-App theme is the default: app-specific surfaces, type, corners and motion. Labels stay still while icon details animate in a six-second loop at 12 fps. Hidden keys stop animating. Colourful, Vivid and Pro remain available with 29 colours, custom labels, glyphs and pictures. App theme uses its own palette; choose another style for custom colours. Buy and Sell retain their semantic colours in App theme.
+![Styles](docs/images/styles.png)
+
+| Style | Look |
+|---|---|
+| **ChatGPT Dark** (default) | Near-black keys, white line icons, ChatGPT-green accents, bold Segoe UI labels |
+| **ChatGPT Light** | White keys with the same icons |
+| **Colourful** | Coloured icons on dark glass |
+| **Vivid** | White icons on a bright gradient |
+| **Pro** | Restrained slate keys with a thin accent strip |
+
+Colourful, Vivid and Pro use the new **ChatGPT** colour by default and accept any of the other colours. Every icon has its own animation in a six-second loop at 12 fps; labels stay still. Turn **Gentle loop** off for a still key. You can also pick another icon, change the label or use your own picture.
+
+![Settings](docs/images/settings.png)
 
 ## Build and verify
 
@@ -28,23 +64,25 @@ App theme is the default: app-specific surfaces, type, corners and motion. Label
 npm ci
 npm run build
 npx tsc --noEmit
-npm test
-npm run test:ui
+npm test            # SDK workflow + animation checks
+npm run test:ui     # inspector (set CHROMIUM_PATH off Windows)
 npm run validate
 npm run pack
 npm run build:installer
-npm run test:installer
+npm run test:installer   # Windows only
 ```
 
-Installer: `dist/com.dailyops.chatgpt.v1.streamDeckPlugin`. Sources and dependencies are self-contained. Personal profiles, credentials, account data and build output are excluded from Git.
+The installer ZIP is `dist/ChatGPTControls-Installer-<version>.zip`; the plugin package is `dist/com.dailyops.chatgpt.v1.streamDeckPlugin`. Personal profiles, credentials, account data and build output are excluded from Git.
 
-![Settings](docs/images/settings.png)
+## Known limits
+
+- Shortcuts are the app's documented defaults; the app may change them between versions.
+- `codex://settings/usage` is not in the app's documented link list; if it opens plain Settings, choose Usage there.
+- Managed PCs that run PowerShell in Constrained Language Mode can stop the shortcut keys.
 
 ## References
 
-- [Official app documentation 1](https://learn.chatgpt.com/docs/reference/commands)
+- [ChatGPT desktop app commands and shortcuts](https://learn.chatgpt.com/docs/reference/commands)
 - [Windows Daily Toolkit](https://github.com/nikhilgs817/windows_daily_toolkit)
 
-Not affiliated with or endorsed by the app publisher. App names belong to their respective owners. MIT license.
-
-The build uses the official Rollup WASM package to avoid native parser dependencies on restricted Windows PCs.
+Not affiliated with or endorsed by OpenAI. ChatGPT is a trademark of OpenAI. The icons are original artwork. MIT license.

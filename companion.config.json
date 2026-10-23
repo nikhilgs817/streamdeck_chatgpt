@@ -3,158 +3,333 @@
   "folder": "CHATGPT",
   "repo": "streamdeck_chatgpt",
   "app": "ChatGPT",
-  "glyph": "sparkchat",
-  "theme": "emerald",
+  "glyph": "newchat",
+  "theme": "chatgpt",
   "reference": "https://learn.chatgpt.com/docs/reference/commands",
   "commands": [
     {
       "id": "back",
       "name": "Back",
       "glyph": "back",
-      "theme": "gold",
-      "description": "Return to the main Stream Deck keys.",
+      "theme": "chatgpt",
+      "description": "Return to your main Stream Deck keys.",
       "operation": "back"
     },
     {
       "id": "newchat",
       "name": "New chat",
-      "glyph": "sparkchat",
-      "theme": "emerald",
-      "shortcut": "Ctrl+N",
-      "description": "New chat in the app. An optional custom shortcut can replace the default."
+      "glyph": "newchat",
+      "theme": "chatgpt",
+      "description": "Start a new chat in the ChatGPT desktop app (opens the app if it is closed).",
+      "operation": "applink",
+      "link": "codex://threads/new"
+    },
+    {
+      "id": "temporary",
+      "name": "Temporary",
+      "glyph": "temporary",
+      "theme": "chatgpt",
+      "description": "Start a temporary chat that is not saved to your history (Ctrl+Shift+N). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+Shift+N"
+    },
+    {
+      "id": "commands",
+      "name": "Search",
+      "glyph": "search",
+      "theme": "chatgpt",
+      "description": "Open the command menu to search chats and commands (Ctrl+K). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+K"
     },
     {
       "id": "usage",
       "name": "Usage",
-      "glyph": "tradeorders",
-      "theme": "emerald",
-      "operation": "url",
-      "url": "https://chatgpt.com/settings/usage",
-      "description": "Open the official account usage page in your default browser. Sign in there if needed."
-    },
-    {
-      "id": "commands",
-      "name": "Commands",
-      "glyph": "palette",
-      "theme": "cosmic",
-      "shortcut": "Ctrl+Shift+P",
-      "description": "Commands in the app. An optional custom shortcut can replace the default."
-    },
-    {
-      "id": "find",
-      "name": "Find in chat",
-      "glyph": "search",
-      "theme": "ocean",
-      "shortcut": "Ctrl+F",
-      "description": "Find in chat in the app. An optional custom shortcut can replace the default."
+      "glyph": "usage",
+      "theme": "chatgpt",
+      "description": "Open your usage and limits in the ChatGPT app settings. The plugin never reads your account data.",
+      "operation": "applink",
+      "link": "codex://settings/usage"
     },
     {
       "id": "models",
       "name": "Models",
-      "glyph": "grid",
-      "theme": "electric",
-      "shortcut": "Ctrl+Shift+M",
-      "description": "Models in the app. An optional custom shortcut can replace the default."
+      "glyph": "models",
+      "theme": "chatgpt",
+      "description": "Open the model picker (Ctrl+Shift+M). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+Shift+M"
+    },
+    {
+      "id": "projects",
+      "name": "Projects",
+      "glyph": "projects",
+      "theme": "chatgpt",
+      "description": "Open the project picker (Ctrl+Alt+Shift+O). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+Alt+Shift+O"
     },
     {
       "id": "sidebar",
       "name": "Sidebar",
       "glyph": "sidebar",
-      "theme": "indigo",
-      "shortcut": "Ctrl+B",
-      "description": "Sidebar in the app. An optional custom shortcut can replace the default."
+      "theme": "chatgpt",
+      "description": "Show or hide the sidebar (Ctrl+B). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+B"
     },
     {
       "id": "previous",
-      "name": "Previous chat",
-      "glyph": "pull",
-      "theme": "violet",
-      "shortcut": "Ctrl+Shift+Tab",
-      "description": "Previous chat in the app. An optional custom shortcut can replace the default."
+      "name": "Previous",
+      "glyph": "previous",
+      "theme": "chatgpt",
+      "description": "Go to the previous chat or tab (Ctrl+Shift+Tab). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+Shift+Tab"
     },
     {
       "id": "next",
-      "name": "Next chat",
-      "glyph": "push",
-      "theme": "azure",
-      "shortcut": "Ctrl+Tab",
-      "description": "Next chat in the app. An optional custom shortcut can replace the default."
+      "name": "Next",
+      "glyph": "next",
+      "theme": "chatgpt",
+      "description": "Go to the next chat or tab (Ctrl+Tab). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+Tab"
+    },
+    {
+      "id": "chatmode",
+      "name": "Chat",
+      "glyph": "chatmode",
+      "theme": "chatgpt",
+      "description": "Switch the app to Chat (Alt+1). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Alt+1"
+    },
+    {
+      "id": "workmode",
+      "name": "Work",
+      "glyph": "workmode",
+      "theme": "chatgpt",
+      "description": "Switch the app to Work (Alt+2). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Alt+2"
+    },
+    {
+      "id": "codexmode",
+      "name": "Codex",
+      "glyph": "codexmode",
+      "theme": "chatgpt",
+      "description": "Switch the app to Codex (Alt+3). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Alt+3"
+    },
+    {
+      "id": "dictate",
+      "name": "Dictate",
+      "glyph": "dictate",
+      "theme": "chatgpt",
+      "description": "Bring ChatGPT to the front and start Windows voice typing (Win+H) in the message box.",
+      "shortcut": "Win+H"
+    },
+    {
+      "id": "more",
+      "name": "More",
+      "glyph": "more",
+      "theme": "chatgpt",
+      "description": "Show the second page of ChatGPT keys.",
+      "operation": "page",
+      "page": 1
+    },
+    {
+      "id": "main",
+      "name": "Main",
+      "glyph": "main",
+      "theme": "chatgpt",
+      "description": "Back to the first page of ChatGPT keys.",
+      "operation": "page",
+      "page": 0
     },
     {
       "id": "settings",
       "name": "Settings",
-      "glyph": "gear",
-      "theme": "peach",
-      "shortcut": "Ctrl+,",
-      "description": "Settings in the app. An optional custom shortcut can replace the default."
+      "glyph": "settings",
+      "theme": "chatgpt",
+      "description": "Open Settings in the ChatGPT desktop app.",
+      "operation": "applink",
+      "link": "codex://settings"
     },
     {
       "id": "shortcuts",
       "name": "Shortcuts",
-      "glyph": "keyboard",
-      "theme": "cyan",
-      "shortcut": "Ctrl+/",
-      "description": "Shortcuts in the app. An optional custom shortcut can replace the default."
+      "glyph": "shortcuts",
+      "theme": "chatgpt",
+      "description": "Show the app's keyboard shortcuts (Ctrl+/). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+/"
+    },
+    {
+      "id": "find",
+      "name": "Find",
+      "glyph": "find",
+      "theme": "chatgpt",
+      "description": "Find text in the current chat (Ctrl+F). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+F"
+    },
+    {
+      "id": "quickchat",
+      "name": "Quick chat",
+      "glyph": "quickchat",
+      "theme": "chatgpt",
+      "description": "Open a quick chat (Ctrl+Alt+N). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+Alt+N"
+    },
+    {
+      "id": "archive",
+      "name": "Archive",
+      "glyph": "archive",
+      "theme": "chatgpt",
+      "description": "Archive the current chat (Ctrl+Shift+A). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+Shift+A"
+    },
+    {
+      "id": "pin",
+      "name": "Pin",
+      "glyph": "pin",
+      "theme": "chatgpt",
+      "description": "Pin or unpin the current chat (Ctrl+Alt+P). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+Alt+P"
+    },
+    {
+      "id": "rename",
+      "name": "Rename",
+      "glyph": "rename",
+      "theme": "chatgpt",
+      "description": "Rename the current chat (Ctrl+Alt+R). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+Alt+R"
+    },
+    {
+      "id": "copylink",
+      "name": "Copy link",
+      "glyph": "copylink",
+      "theme": "chatgpt",
+      "description": "Copy a link to the current chat (Ctrl+Alt+L). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+Alt+L"
+    },
+    {
+      "id": "skills",
+      "name": "Skills",
+      "glyph": "skills",
+      "theme": "chatgpt",
+      "description": "Open Skills in the ChatGPT desktop app.",
+      "operation": "applink",
+      "link": "codex://skills"
+    },
+    {
+      "id": "scheduled",
+      "name": "Scheduled",
+      "glyph": "scheduled",
+      "theme": "chatgpt",
+      "description": "Open scheduled tasks in the ChatGPT desktop app.",
+      "operation": "applink",
+      "link": "codex://automations"
+    },
+    {
+      "id": "fullview",
+      "name": "Full view",
+      "glyph": "fullview",
+      "theme": "chatgpt",
+      "description": "Enter or leave full view (Ctrl+Shift+F). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+Shift+F"
     },
     {
       "id": "zoomin",
       "name": "Zoom in",
-      "glyph": "search",
-      "theme": "tropical",
-      "shortcut": "Ctrl+Plus",
-      "description": "Zoom in in the app. An optional custom shortcut can replace the default."
+      "glyph": "zoomin",
+      "theme": "chatgpt",
+      "description": "Make the text larger (Ctrl+=). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+="
     },
     {
       "id": "zoomout",
       "name": "Zoom out",
-      "glyph": "search",
-      "theme": "sky",
-      "shortcut": "Ctrl+-",
-      "description": "Zoom out in the app. An optional custom shortcut can replace the default."
+      "glyph": "zoomout",
+      "theme": "chatgpt",
+      "description": "Make the text smaller (Ctrl+-). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+-"
     },
     {
       "id": "resetzoom",
       "name": "Reset zoom",
-      "glyph": "target",
-      "theme": "lemonade",
-      "shortcut": "Ctrl+0",
-      "description": "Reset zoom in the app. An optional custom shortcut can replace the default."
+      "glyph": "resetzoom",
+      "theme": "chatgpt",
+      "description": "Reset the text size (Ctrl+0). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+0"
+    },
+    {
+      "id": "navback",
+      "name": "Go back",
+      "glyph": "navback",
+      "theme": "chatgpt",
+      "description": "Navigate back (Ctrl+[). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+["
+    },
+    {
+      "id": "navforward",
+      "name": "Go forward",
+      "glyph": "navforward",
+      "theme": "chatgpt",
+      "description": "Navigate forward (Ctrl+]). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+]"
     },
     {
       "id": "copy",
       "name": "Copy",
       "glyph": "copy",
-      "theme": "violet",
-      "shortcut": "Ctrl+C",
-      "description": "Copy in the app. An optional custom shortcut can replace the default."
+      "theme": "chatgpt",
+      "description": "Copy (Ctrl+C). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+C"
     },
     {
       "id": "paste",
       "name": "Paste",
       "glyph": "paste",
-      "theme": "crimson",
-      "shortcut": "Ctrl+V",
-      "description": "Paste in the app. An optional custom shortcut can replace the default."
+      "theme": "chatgpt",
+      "description": "Paste (Ctrl+V). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+V"
+    },
+    {
+      "id": "undo",
+      "name": "Undo",
+      "glyph": "undo",
+      "theme": "chatgpt",
+      "description": "Undo the last app action (Ctrl+Z). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+Z"
+    },
+    {
+      "id": "redo",
+      "name": "Redo",
+      "glyph": "redo",
+      "theme": "chatgpt",
+      "description": "Redo the last app action (Ctrl+Y). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "Ctrl+Y"
+    },
+    {
+      "id": "fullscreen",
+      "name": "Full screen",
+      "glyph": "fullscreen",
+      "theme": "chatgpt",
+      "description": "Toggle full screen (F11). Brings ChatGPT to the front first; nothing is sent if another window is active. You can change the shortcut in the key settings.",
+      "shortcut": "F11"
     },
     {
       "id": "focus",
       "name": "Focus app",
-      "glyph": "target",
-      "theme": "ocean",
-      "description": "Bring the verified app window to the front.",
+      "glyph": "focus",
+      "theme": "chatgpt",
+      "description": "Bring the ChatGPT window to the front.",
       "operation": "focus"
     },
     {
       "id": "shortcut",
-      "name": "Custom shortcut",
-      "glyph": "keyboard",
-      "theme": "electric",
-      "description": "Set your own app shortcut, for example Ctrl+Shift+N."
+      "name": "Custom key",
+      "glyph": "shortcut",
+      "theme": "chatgpt",
+      "description": "Send any shortcut you type in the key settings, for example Ctrl+Alt+1. Win+<key> works too.",
+      "requiresBinding": true
     }
   ],
   "uuid": "com.dailyops.chatgpt.v1",
   "name": "ChatGPT Controls",
-  "version": "1.1.1.0",
+  "version": "1.2.0.0",
   "profile": "profiles/ChatGPT",
   "selector": {
     "names": [
@@ -166,28 +341,56 @@
   "design": {
     "id": "chatgpt",
     "name": "ChatGPT",
-    "background": "#101010",
-    "surface": "#1f1f1f",
-    "ink": "#eeeeee",
-    "accent": "#a6d7c6",
-    "border": "#414141",
-    "radius": 18
+    "styleName": "ChatGPT Dark",
+    "light": true,
+    "background": "#0E0E0E",
+    "surface": "#1C1C1C",
+    "ink": "#F2F2F2",
+    "accent": "#10A37F",
+    "border": "#3A3A3A",
+    "radius": 14
   },
-  "layout": {
-    "0,0": "back",
-    "1,0": "newchat",
-    "2,0": "usage",
-    "3,0": "commands",
-    "4,0": "find",
-    "0,1": "models",
-    "1,1": "sidebar",
-    "2,1": "previous",
-    "3,1": "next",
-    "4,1": "settings",
-    "0,2": "shortcuts",
-    "1,2": "zoomin",
-    "2,2": "zoomout",
-    "3,2": "resetzoom",
-    "4,2": "copy"
-  }
+  "linkScheme": "codex://",
+  "pages": [
+    {
+      "name": "ChatGPT",
+      "layout": {
+        "0,0": "back",
+        "1,0": "newchat",
+        "2,0": "temporary",
+        "3,0": "commands",
+        "4,0": "usage",
+        "0,1": "models",
+        "1,1": "projects",
+        "2,1": "sidebar",
+        "3,1": "previous",
+        "4,1": "next",
+        "0,2": "chatmode",
+        "1,2": "workmode",
+        "2,2": "codexmode",
+        "3,2": "dictate",
+        "4,2": "more"
+      }
+    },
+    {
+      "name": "More",
+      "layout": {
+        "0,0": "main",
+        "1,0": "settings",
+        "2,0": "shortcuts",
+        "3,0": "find",
+        "4,0": "quickchat",
+        "0,1": "archive",
+        "1,1": "pin",
+        "2,1": "rename",
+        "3,1": "copylink",
+        "4,1": "skills",
+        "0,2": "scheduled",
+        "1,2": "fullview",
+        "2,2": "zoomin",
+        "3,2": "zoomout",
+        "4,2": "resetzoom"
+      }
+    }
+  ]
 }
