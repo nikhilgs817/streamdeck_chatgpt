@@ -25,6 +25,20 @@
       "link": "codex://threads/new"
     },
     {
+      "id": "send",
+      "name": "Send",
+      "glyph": "send",
+      "theme": "chatgpt",
+      "description": "Send the message in the ChatGPT message box by pressing the app's own Send button.",
+      "menu": [
+        [
+          "Send prompt",
+          "Send message",
+          "Send"
+        ]
+      ]
+    },
+    {
       "id": "temporary",
       "name": "Temporary",
       "glyph": "temporary",
@@ -329,7 +343,7 @@
   ],
   "uuid": "com.dailyops.chatgpt.v1",
   "name": "ChatGPT Controls",
-  "version": "1.2.0.0",
+  "version": "1.2.1.0",
   "profile": "profiles/ChatGPT",
   "selector": {
     "names": [
@@ -366,9 +380,9 @@
         "3,1": "previous",
         "4,1": "next",
         "0,2": "chatmode",
-        "1,2": "workmode",
-        "2,2": "codexmode",
-        "3,2": "dictate",
+        "1,2": "codexmode",
+        "2,2": "dictate",
+        "3,2": "send",
         "4,2": "more"
       }
     },
@@ -379,7 +393,7 @@
         "1,0": "settings",
         "2,0": "shortcuts",
         "3,0": "find",
-        "4,0": "quickchat",
+        "4,0": "workmode",
         "0,1": "archive",
         "1,1": "pin",
         "2,1": "rename",

@@ -1,6 +1,6 @@
 # ChatGPT Controls
 
-Unofficial Elgato Stream Deck plugin for the **ChatGPT desktop app on Windows** (Chat, Work and Codex). Version 1.2.0.0.
+Unofficial Elgato Stream Deck plugin for the **ChatGPT desktop app on Windows** (Chat, Work and Codex). Version 1.2.1.0.
 
 Keys use the app's own documented keyboard shortcuts and `codex://` app links, so they act **inside the desktop app**. Every icon is animated.
 
@@ -8,7 +8,7 @@ Keys use the app's own documented keyboard shortcuts and `codex://` app links, s
 
 ## Install in three steps
 
-1. Download **ChatGPTControls-Installer-1.2.0.0.zip** from [Releases](https://github.com/nikhilgs817/streamdeck_chatgpt/releases/latest).
+1. Download **ChatGPTControls-Installer-1.2.1.0.zip** from [Releases](https://github.com/nikhilgs817/streamdeck_chatgpt/releases/latest).
 2. Right-click the ZIP, choose **Extract All**, and open the extracted folder.
 3. Double-click **Install-ChatGPTControls.cmd**. Wait for the success message; Stream Deck restarts automatically.
 
@@ -16,11 +16,11 @@ No Git, Node.js or build commands are needed. Windows Daily Toolkit is included 
 
 ## The keys
 
-**Page 1 (ChatGPT):** Back · New chat · Temporary · Search · Usage / Models · Projects · Sidebar · Previous · Next / Chat · Work · Codex · Dictate · More
+**Page 1 (ChatGPT):** Back · New chat · Temporary · Search · Usage / Models · Projects · Sidebar · Previous · Next / Chat · Codex · Dictate · Send · More
 
-**Page 2 (More):** Main · Settings · Shortcuts · Find · Quick chat / Archive · Pin · Rename · Copy link · Skills / Scheduled · Full view · Zoom in · Zoom out · Reset zoom
+**Page 2 (More):** Main · Settings · Shortcuts · Find · Work / Archive · Pin · Rename · Copy link · Skills / Scheduled · Full view · Zoom in · Zoom out · Reset zoom
 
-Also in the action list: Go back, Go forward, Copy, Paste, Undo, Redo, Full screen, Focus app and Custom key.
+Also in the action list: Quick chat, Go back, Go forward, Copy, Paste, Undo, Redo, Full screen, Focus app and Custom key.
 
 | Key | What it does | How |
 |---|---|---|
@@ -35,6 +35,7 @@ Also in the action list: Go back, Go forward, Copy, Paste, Undo, Redo, Full scre
 | Archive, Pin, Rename, Copy link | Current chat | Ctrl+Shift+A, Ctrl+Alt+P, Ctrl+Alt+R, Ctrl+Alt+L |
 | Full view, Find, Shortcuts | | Ctrl+Shift+F, Ctrl+F, Ctrl+/ |
 | Zoom in/out, Reset zoom | Text size | Ctrl+=, Ctrl+-, Ctrl+0 |
+| Send | Send what you typed | The app's Send button |
 | Dictate | Windows voice typing into the message box | Win+H |
 | Custom key | Any shortcut you type, e.g. `Ctrl+Alt+1` or `Win+H` | |
 

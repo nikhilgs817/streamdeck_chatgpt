@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.1
+
+- Bigger, bolder key labels (+1 pt, extra-bold Segoe UI).
+- New **Send** key: presses the app's own Send button (animated arrow icon). It is on page 1.
+- Livelier animation: icon details run two loops per cycle, the icon gently rises and settles, the glow breathes and an accent light travels round each key.
+- Background helper: VS Code-style fail-closed focus checks are now shared by every command.
+
 ## 1.2.0
 
 - **Built on the app's official controls.** Keys use the ChatGPT desktop app's documented shortcuts and `codex://` app links, so New chat, Settings, Skills and Scheduled open inside the app (starting it if needed).

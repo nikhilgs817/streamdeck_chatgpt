@@ -4,12 +4,12 @@
   "PluginId": "com.dailyops.chatgpt.v1",
   "PluginFolder": "chatgpt",
   "Profile": "profiles/ChatGPT",
-  "Version": "1.2.0.0",
+  "Version": "1.2.1.0",
   "Repository": "nikhilgs817/streamdeck_chatgpt",
   "Toolkit": {
     "Version": "2.6.1.0",
     "Url": "https://github.com/nikhilgs817/windows_daily_toolkit/releases/download/v2.6.1/WindowsDailyToolkit-Installer-2.6.1.0.zip",
     "Sha256": "c2e1fd3e6e2671b16b7f4a70d54913596569164c5d89cf305e521d60310621c3"
   },
-  "PackageSha256": "cb4d42f2cfe286b956e84f16ff95f07776f1eebe211f7fd8a88995e66d606e3f"
+  "PackageSha256": "97e97e4f6871b944106aa2ea0b17b8f5b06d61cf6faa89b3b9f7b004abcbb68c"
 }

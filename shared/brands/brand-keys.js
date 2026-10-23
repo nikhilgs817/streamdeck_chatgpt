@@ -286,6 +286,102 @@ Object.assign(ART, {
 		`<path d="M36 44l9 7-9 7" ${line(T.clay, 5)}/><path d="M54 51h${f(30 + 20 * wave(p))}" ${line(T.ink, 5)}/><path d="M36 72h56" ${line(T.muted, 4)}/>`,
 });
 
+// ── Developer icons (VS Code) ──
+Object.assign(ART, {
+	quickopen: (p) => `<path d="M38 20h34l22 22v52a8 8 0 0 1-8 8H38a8 8 0 0 1-8-8V28a8 8 0 0 1 8-8z" fill="${T.ink}" fill-opacity=".05" ${sline(T.ink, 5)}/><path d="M72 20v22h22" ${line(T.muted, 4)}/>` +
+		`<g transform="translate(${f(-4 * wave(p))} ${f(-3 * wave(p))})"><circle cx="90" cy="78" r="14" fill="${T.surface}" ${sline(T.clay, 5.5)}/><path d="M100 88l13 13" ${line(T.clay, 7)}/></g>`,
+	explorer: (p) => {
+		const o = (i) => f(0.45 + 0.55 * wave((p * 1.5 + i * 0.22) % 1));
+		return `<rect x="22" y="20" width="30" height="18" rx="4" fill="${T.clay}"/><path d="M36 38v52M36 56h20M36 90h20" ${line(T.muted, 4.5)}/>` +
+			`<rect x="60" y="46" width="58" height="20" rx="5" fill="${T.ink}" fill-opacity="${o(0)}"/><rect x="60" y="80" width="58" height="20" rx="5" fill="${T.ink}" fill-opacity="${o(1)}"/>`;
+	},
+	branch: (p) => {
+		const t = (p * 1.4) % 1;
+		return `<path d="M44 38v44M98 50c0 22-54 12-54 30" ${line(T.muted, 5.5)}/>` +
+			`<circle cx="${f(44 + (98 - 44) * 0)}" cy="${f(38 + 44 * t)}" r="4" fill="${T.clay}" opacity="${f(Math.sin(t * Math.PI))}"/>` +
+			`<circle cx="44" cy="28" r="10" fill="${T.surface}" ${sline(T.ink, 5.5)}/><circle cx="44" cy="92" r="10" fill="${T.surface}" ${sline(T.ink, 5.5)}/><circle cx="98" cy="40" r="10" fill="${T.clay}" ${sline(T.clay, 5.5)}/>`;
+	},
+	commit: (p) => `<path d="M16 56h34M94 56h34" ${line(T.muted, 5.5)}/><circle cx="72" cy="56" r="${f(19 + 2 * wave(p))}" fill="${T.surface}" ${sline(T.ink, 6)}/><circle cx="72" cy="56" r="${f(5 + 3 * wave(p))}" fill="${T.clay}"/>`,
+	push: (p) => `<path d="M38 24h68" ${line(T.clay, 6)}/><g transform="translate(0 ${f(-8 * wave(p))})"><path d="M72 94V44M52 62l20-20 20 20" ${line(T.ink, 7)}/></g>`,
+	pull: (p) => `<path d="M38 92h68" ${line(T.clay, 6)}/><g transform="translate(0 ${f(8 * wave(p))})"><path d="M72 22v50M52 54l20 20 20-20" ${line(T.ink, 7)}/></g>`,
+	terminal: (p) => {
+		const on = (p * 4) % 1 < 0.55;
+		return `<rect x="18" y="24" width="108" height="68" rx="9" fill="${T.ink}" fill-opacity=".05" ${sline(T.ink, 5)}/><path d="M18 40h108" ${line(T.faint, 4)}/>` +
+			`<path d="M36 56l13 10-13 10" ${line(T.clay, 6)}/><rect x="58" y="72" width="26" height="6" rx="3" fill="${T.ink}" opacity="${on ? 1 : 0.15}"/>`;
+	},
+	newterm: (p) => `<rect x="14" y="32" width="92" height="64" rx="9" fill="${T.ink}" fill-opacity=".05" ${sline(T.ink, 5)}/><path d="M30 54l12 10-12 10" ${line(T.clay, 5.5)}/><path d="M50 80h22" ${line(T.ink, 5.5)}/>` +
+		`<g transform="translate(108 34) scale(${f(1 + 0.12 * wave(p))}) translate(-108 -34)"><circle cx="108" cy="34" r="18" fill="${T.clay}"/><path d="M108 25v18M99 34h18" ${line(T.cut, 5)}/></g>`,
+	play: (p) => `<circle cx="72" cy="56" r="${f(36 + 4 * wave(p))}" fill="none" stroke="${T.clay}" stroke-width="3" opacity="${f(0.5 - 0.4 * wave(p))}"/>` +
+		`<path d="M58 34L96 56 58 78z" fill="${T.clay}" ${sline(T.clay, 6)}/>`,
+	bug: (p) => {
+		// Modern "run and debug": outlined play shape with a breakpoint badge that pulses and a bug glyph inside it.
+		const r = 15 + 2.5 * wave(p);
+		return `<path d="M36 26c0-5 5.5-8 9.8-5.5l48 29.5c4 2.5 4 8.5 0 11L45.8 90.5C41.5 93 36 90 36 85z" fill="${T.ink}" fill-opacity=".06" ${sline(T.ink, 5.5)}/>` +
+			`<circle cx="98" cy="80" r="${f(r + 6)}" fill="${T.clay}" opacity="${f(0.18 * (1 - wave(p)) + 0.05)}"/>` +
+			`<circle cx="98" cy="80" r="${f(r)}" fill="${T.clay}"/>` +
+			`<ellipse cx="98" cy="83" rx="5.5" ry="7" fill="${T.cut}"/><circle cx="98" cy="73.5" r="3.4" fill="${T.cut}"/>` +
+			`<path d="M91 80h-5M105 80h5M91.5 87l-4 3M104.5 87l4 3M92 75l-3-3M104 75l3-3" ${line(T.cut, 2.2)}/>`;
+	},
+	format: (p) => {
+		const x = [64, 98, 54, 80];
+		return x.map((w, i) => `<path d="M22 ${32 + i * 18}h${f(w - (i % 2 ? 10 : 0) * wave(p))}" ${line(i === 1 ? T.clay : T.ink, 5.5)}/>`).join("") +
+			sparkle(110, 72, 12, T.clay, 0.5 + 0.5 * wave(p));
+	},
+	save: (p) => `<path d="M28 20h66l22 22v52a8 8 0 0 1-8 8H36a8 8 0 0 1-8-8z" fill="${T.ink}" fill-opacity=".05" ${sline(T.ink, 5)}/>` +
+		`<path d="M44 20v24h38V20" ${line(T.ink, 5)}/><rect x="42" y="64" width="60" height="32" rx="5" fill="${T.clay}" opacity="${f(0.55 + 0.45 * wave(p))}"/>`,
+	split: (p) => {
+		const x = 72 + 6 * Math.sin(p * TAU);
+		return `<rect x="18" y="24" width="108" height="68" rx="9" fill="${T.ink}" fill-opacity=".05" ${sline(T.ink, 5)}/><path d="M${f(x)} 26v64" ${line(T.clay, 5)}/>` +
+			`<path d="M30 44h${f(x - 42)}M30 58h${f(x - 52)}M${f(x + 12)} 44h${f(114 - x - 12)}M${f(x + 12)} 58h${f(114 - x - 22)}" ${line(T.muted, 4)}/>`;
+	},
+	comment: (p) => `<path d="M30 40h40M30 56h52M30 72h34" ${line(T.muted, 5)}/>` +
+		`<g opacity="${f(0.5 + 0.5 * wave(p))}"><path d="M86 84l12-44M104 84l12-44" ${line(T.clay, 7)}/></g>`,
+	definition: (p) => `<circle cx="72" cy="56" r="34" fill="none" ${sline(T.muted, 4.5)}/><circle cx="72" cy="56" r="${f(18 + 3 * wave(p))}" fill="none" ${sline(T.ink, 5.5)}/><circle cx="72" cy="56" r="7" fill="${T.clay}"/>` +
+		`<path d="M72 12v14M72 86v14M28 56h14M102 56h14" ${line(T.ink, 5)}/>`,
+	rename: (p) => {
+		const n = 1 + Math.floor(p * 4) % 4;
+		return `<rect x="22" y="38" width="100" height="36" rx="7" fill="${T.ink}" fill-opacity=".05" ${sline(T.ink, 4.5)}/>` +
+			[0, 1, 2, 3].slice(0, n).map((i) => `<rect x="${34 + i * 16}" y="50" width="11" height="12" rx="2" fill="${T.muted}"/>`).join("") +
+			`<rect x="${34 + n * 16}" y="46" width="4" height="20" rx="2" fill="${T.clay}"/><path d="M92 86h18" ${line(T.clay, 4)}/>`;
+	},
+	problems: (p) => `<path d="M72 22L120 98H24z" fill="${T.clay}" fill-opacity="${f(0.12 + 0.18 * wave(p))}" ${sline(T.clay, 6.5)}/><path d="M72 48v24" ${line(T.ink, 7)}/><circle cx="72" cy="85" r="4.5" fill="${T.ink}"/>`,
+	zen: (p) => `<path d="M86 20A40 40 0 1 0 118 82 32 32 0 0 1 86 20z" fill="${T.ink}" fill-opacity=".06" ${sline(T.ink, 5.5)}/>` + sparkle(104, 36, 6, T.clay, wave(p)) + sparkle(116, 58, 4, T.clayLight, wave((p + 0.5) % 1)),
+	closeeditor: (p) => {
+		const s = 1 - 0.18 * wave(p);
+		return `<rect x="18" y="24" width="108" height="68" rx="9" fill="${T.ink}" fill-opacity=".05" ${sline(T.ink, 5)}/><path d="M18 40h108" ${line(T.faint, 4)}/>` +
+			`<g transform="translate(72 66) scale(${f(s)}) translate(-72 -66)"><path d="M60 54l24 24M84 54L60 78" ${line(T.clay, 6.5)}/></g>`;
+	},
+	command: (p) => ART.commands(p),
+	project: (p) => `<path d="M20 38a8 8 0 0 1 8-8h22l10 10h56a8 8 0 0 1 8 8v42a8 8 0 0 1-8 8H28a8 8 0 0 1-8-8z" fill="${T.ink}" fill-opacity=".05" ${sline(T.ink, 5)}/>` +
+		`<path d="M60 56l-12 12 12 12M84 56l12 12-12 12" ${line(T.clay, 6)}/>` + `<path d="M76 54l-8 28" ${line(T.ink, 4)} opacity="${f(0.4 + 0.6 * wave(p))}"/>`,
+	copilot: (p) => {
+		// Modern AI chat: soft filled bubble, sparkle, and "typing" dots that ripple.
+		const dots = [0, 1, 2].map((i) => { const q = wave((p * 2 + i * 0.15) % 1); return `<circle cx="${60 + i * 12}" cy="${f(70 - 4 * q)}" r="3.6" fill="${T.ink}" opacity="${f(0.4 + 0.6 * q)}"/>`; }).join("");
+		return `<path d="M44 22h56a16 16 0 0 1 16 16v30a16 16 0 0 1-16 16H72L54 98V84H44a16 16 0 0 1-16-16V38a16 16 0 0 1 16-16z" fill="${T.clay}" fill-opacity=".16" ${sline(T.clay, 5)}/>` +
+			sparkle(72, 46, 12 + 2 * wave(p), T.clay, 1) + sparkle(93, 33, 5, T.clayLight, wave((p + 0.5) % 1)) + dots;
+	},
+	quickfix: (p) => `<path d="M72 22a24 24 0 0 0-14 43v9h28v-9a24 24 0 0 0-14-43z" fill="${T.clay}" fill-opacity="${f(0.3 + 0.6 * wave(p))}" ${sline(T.clay, 5)}/>` +
+		`<path d="M60 84h24M64 94h16" ${line(T.ink, 5)}/>` + [0, 1, 2].map((i) => { const a = -150 + i * 60; return `<path d="M${f(72 + 32 * Math.cos(a * Math.PI / 180))} ${f(46 + 32 * Math.sin(a * Math.PI / 180))}L${f(72 + 40 * Math.cos(a * Math.PI / 180))} ${f(46 + 40 * Math.sin(a * Math.PI / 180))}" ${line(T.clay, 4)} opacity="${f(wave(p))}"/>`; }).join(""),
+	panel: (p) => {
+		const h = 18 + 12 * wave(p);
+		return `<rect x="18" y="24" width="108" height="68" rx="9" fill="${T.ink}" fill-opacity=".05" ${sline(T.ink, 5)}/>` +
+			`<path d="M20 ${f(90 - h)}h104v${f(h - 8)}a8 8 0 0 1-8 8H28a8 8 0 0 1-8-8z" fill="${T.clay}" opacity=".85"/>`;
+	},
+	extensions: (p) => {
+		const d = 6 * wave(p);
+		return `<rect x="26" y="50" width="30" height="30" rx="4" fill="none" ${sline(T.ink, 5)}/><rect x="56" y="50" width="30" height="30" rx="4" fill="none" ${sline(T.ink, 5)}/><rect x="26" y="80" width="30" height="16" rx="4" fill="none" ${sline(T.ink, 5)}/>` +
+			`<rect x="${f(72 + d)}" y="${f(24 - d)}" width="28" height="28" rx="4" fill="${T.clay}" transform="rotate(${f(-8 * wave(p))} ${f(86 + d)} ${f(38 - d)})"/>`;
+	},
+});
+
+// ── Send ──
+ART.send = (p) => {
+	const t = (p * 1.25) % 1, y = 56 - 14 * Math.min(1, t * 1.6), o = t < 0.62 ? 1 : Math.max(0, 1 - (t - 0.62) * 3.5);
+	return `<rect x="34" y="18" width="76" height="76" rx="22" fill="${T.clay}"/>` +
+		`<g transform="translate(0 ${f(y - 56)})" opacity="${f(o)}"><path d="M72 76V38M54 54l18-18 18 18" ${line(T.cut, 7.5)}/></g>` +
+		`<path d="M72 ${f(84 - 4 * wave(p))}h0" ${line(T.cut, 4)} opacity=".5"/>`;
+};
+
 // ── Styles ──
 const hex = (h) => { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
 const mix = (a, b, t) => "#" + hex(a).map((v, i) => Math.round(v + (hex(b)[i] - v) * t).toString(16).padStart(2, "0")).join("");
@@ -295,6 +391,11 @@ export const BRANDS = {
 		app: { ...CLAUDE_TOKENS },
 		light: { bgTop: "#FBF9F4", bgBottom: "#ECE7DA", edge: "#D8D0BF", ink: "#3A362E", muted: "#A0988A", faint: "#DED7C8", clay: "#C96442", clayLight: "#E38A64", surface: "#FFFFFF", cut: "#FFFFFF" },
 		colours: ["#F0A07C", "#C8582F", "#5C2414"],
+	},
+	vscode: {
+		app: { bgTop: "#252526", bgBottom: "#161616", edge: "#333333", ink: "#E6E6E6", muted: "#8A8A8A", faint: "#3C3C3C", clay: "#3794FF", clayLight: "#7FB9FF", surface: "#1F1F1F", cut: "#161616" },
+		light: { bgTop: "#FFFFFF", bgBottom: "#EEF2F7", edge: "#D4D9E0", ink: "#1F2328", muted: "#8C959F", faint: "#DDE3EA", clay: "#005FB8", clayLight: "#3B8EEA", surface: "#FFFFFF", cut: "#FFFFFF" },
+		colours: ["#4DA3FF", "#0B5CAD", "#06315E"],
 	},
 	chatgpt: {
 		app: { bgTop: "#262626", bgBottom: "#0E0E0E", edge: "#3A3A3A", ink: "#F2F2F2", muted: "#8C8C8C", faint: "#3C3C3C", clay: "#10A37F", clayLight: "#5FD3AE", surface: "#1C1C1C", cut: "#0E0E0E" },
@@ -330,8 +431,10 @@ export function brandKeySvg({ brand = "claude", glyph, label = "", phase = 0, se
 	const serif = pal.font === "app"; // native looks: title-case Segoe UI Bold with the accent rule
 	const raw = String(label).slice(0, 14);
 	const text = esc(serif ? raw : raw.toUpperCase());
-	const fs = serif ? (raw.length > 11 ? 15.5 : raw.length > 8 ? 17.5 : 20) : Math.min(18, Math.floor(130 / Math.max(1, raw.length * 0.64)));
-	const glowOp = (style === "vivid" ? 0.16 : style === "neon" ? 0.22 : 0.10) + 0.06 * wave(p);
+	const fs = serif ? (raw.length > 11 ? 16.5 : raw.length > 8 ? 18.5 : 21) : Math.min(19, Math.floor(130 / Math.max(1, raw.length * 0.64)) + 1);
+	// Livelier motion: icon details run two loops per 6 s cycle, the icon bobs, the glow breathes and an accent light travels round the frame.
+	const p2 = (p * 2) % 1;
+	const glowOp = (style === "vivid" ? 0.14 : style === "neon" ? 0.2 : 0.1) + (animate ? 0.22 * wave(p2) : 0);
 	let body = `<defs><linearGradient id="${u}b" x1="0" y1="0" x2="${style === "vivid" ? 1 : 0}" y2="1"><stop offset="0" stop-color="${pal.bgTop}"/><stop offset="1" stop-color="${pal.bgBottom}"/></linearGradient>` +
 		`<radialGradient id="${u}g" cx=".5" cy=".38" r=".55"><stop offset="0" stop-color="${pal.glow}" stop-opacity="${f(glowOp)}"/><stop offset="1" stop-color="${pal.glow}" stop-opacity="0"/></radialGradient>` +
 		(pal.bar ? `<linearGradient id="${u}r" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${pal.bar[0]}"/><stop offset="1" stop-color="${pal.bar[1]}"/></linearGradient>` : "") + `</defs>` +
@@ -340,13 +443,14 @@ export function brandKeySvg({ brand = "claude", glyph, label = "", phase = 0, se
 	body += `<rect x="1.5" y="1.5" width="141" height="141" rx="14" fill="none" stroke="${pal.edge}" stroke-width="2"/>`;
 	if (pal.bar) body += `<rect width="144" height="6" fill="url(#${u}r)"/>`;
 	// Travelling sheen on the frame for the colour looks.
-	if (animate && (style === "neon" || style === "vivid" || style === "pro")) body += `<rect x="2.5" y="2.5" width="139" height="139" rx="13" fill="none" stroke="#fff" stroke-width="1.6" stroke-opacity=".28" stroke-dasharray="30 526" stroke-dashoffset="${f(-p * 556)}"/>`;
-	body += `<g data-glyph="${esc(glyph)}">${draw(p)}</g>`;
+	if (animate) body += `<rect x="2.5" y="2.5" width="139" height="139" rx="13" fill="none" stroke="${style === "app" || style === "light" ? pal.clay : "#fff"}" stroke-width="2.4" stroke-opacity="${style === "app" || style === "light" ? 0.85 : 0.5}" stroke-linecap="round" stroke-dasharray="46 510" stroke-dashoffset="${f(-p * 556)}"/>`;
+	const bob = animate ? -4 * Math.sin(p2 * TAU) : 0, grow = animate ? 1 + 0.05 * wave(p2) : 1;
+	body += `<g data-glyph="${esc(glyph)}" transform="translate(72 ${f(56 + bob)}) scale(${f(grow)}) translate(-72 -56)">${draw(p2)}</g>`;
 	if (setup) body += `<rect x="46" y="92" width="52" height="15" rx="7.5" fill="${pal.clay}"/><text x="72" y="103" text-anchor="middle" font-family="Segoe UI, Arial" font-size="9.5" font-weight="700" letter-spacing="1" fill="${pal.cut}">SETUP</text>`;
-	if (text) body += (serif ? `<path d="M60 110h24" stroke="${pal.clay}" stroke-width="2" stroke-linecap="round" opacity=".75"/>` +
-		`<text x="72" y="132" text-anchor="middle" font-family="${LABEL_FONT}" font-size="${fs}" font-weight="700" fill="${pal.ink}">${text}</text>` :
+	if (text) body += (serif ? `<path d="M${f(72 - (10 + 12 * (animate ? wave(p2) : 0.5)))} 110h${f(2 * (10 + 12 * (animate ? wave(p2) : 0.5)))}" stroke="${pal.clay}" stroke-width="2.5" stroke-linecap="round" opacity=".9"/>` +
+		`<text x="72" y="132" text-anchor="middle" font-family="${LABEL_FONT}" font-size="${fs}" font-weight="800" fill="${pal.ink}" stroke="${pal.ink}" stroke-width=".55" stroke-linejoin="round">${text}</text>` :
 		`<text x="72" y="132.5" text-anchor="middle" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="${fs}" font-weight="800" letter-spacing="${raw.length > 9 ? 0.3 : 1}" fill="#000" opacity=".35">${text}</text>` +
-		`<text x="72" y="131" text-anchor="middle" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="${fs}" font-weight="800" letter-spacing="${raw.length > 9 ? 0.3 : 1}" fill="${style === "neon" ? "#ffffff" : pal.ink}">${text}</text>`);
+		`<text x="72" y="131" text-anchor="middle" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="${fs}" font-weight="800" letter-spacing="${raw.length > 9 ? 0.3 : 1}" fill="${style === "neon" ? "#ffffff" : pal.ink}" stroke="${style === "neon" ? "#ffffff" : pal.ink}" stroke-width=".5" stroke-linejoin="round">${text}</text>`);
 	Object.assign(T, CLAUDE_TOKENS);
 	return `<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144"><g data-app-design="${esc(brand)}" data-style="${style}">${body}</g></svg>`;
 }
