@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.3
+
+- **Back fixed:** moving between pages (More, Main and the other page keys) no longer replaces your main keys as the place Back returns to. Back, and switching away from the app or minimizing it, now return to your Default profile.
+- Back and page presses are now written to the plugin log for troubleshooting.
+
 ## 1.2.2
 
 - New **5h session** and **Weekly** keys: show how much of your ChatGPT/Codex usage limits is used (big %, ring, time to reset), read from the app's own records on this PC. No sign-in needed. Updates every minute; press to refresh.

@@ -1,6 +1,6 @@
 # ChatGPT Controls
 
-Unofficial Elgato Stream Deck plugin for the **ChatGPT desktop app on Windows** (Chat, Work and Codex). Version 1.2.2.0.
+Unofficial Elgato Stream Deck plugin for the **ChatGPT desktop app on Windows** (Chat, Work and Codex). Version 1.2.3.0.
 
 Keys use the app's own documented keyboard shortcuts and `codex://` app links, so they act **inside the desktop app**. Every icon is animated.
 
@@ -8,7 +8,7 @@ Keys use the app's own documented keyboard shortcuts and `codex://` app links, s
 
 ## Install in three steps
 
-1. Download **ChatGPTControls-Installer-1.2.2.0.zip** from [Releases](https://github.com/nikhilgs817/streamdeck_chatgpt/releases/latest).
+1. Download **ChatGPTControls-Installer-1.2.3.0.zip** from [Releases](https://github.com/nikhilgs817/streamdeck_chatgpt/releases/latest).
 2. Right-click the ZIP, choose **Extract All**, and open the extracted folder.
 3. Double-click **Install-ChatGPTControls.cmd**. Wait for the success message; Stream Deck restarts automatically.
 

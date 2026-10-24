@@ -365,7 +365,7 @@
   ],
   "uuid": "com.dailyops.chatgpt.v1",
   "name": "ChatGPT Controls",
-  "version": "1.2.2.0",
+  "version": "1.2.3.0",
   "profile": "profiles/ChatGPT",
   "selector": {
     "names": [
