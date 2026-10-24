@@ -39,6 +39,28 @@
       ]
     },
     {
+      "id": "usage5h",
+      "name": "5h session",
+      "glyph": "meter",
+      "theme": "chatgpt",
+      "description": "Shows how much of your ChatGPT/Codex 5-hour usage window is used, as a percentage, with the time until it resets. Press to refresh now. Read from the app's own records on this PC; no sign-in needed.",
+      "meter": {
+        "source": "codex",
+        "window": "5h"
+      }
+    },
+    {
+      "id": "usageweek",
+      "name": "Weekly",
+      "glyph": "meter",
+      "theme": "chatgpt",
+      "description": "Shows how much of your ChatGPT/Codex weekly usage limit is used, as a percentage, with the time until it resets. Press to refresh now. Read from the app's own records on this PC; no sign-in needed.",
+      "meter": {
+        "source": "codex",
+        "window": "7d"
+      }
+    },
+    {
       "id": "temporary",
       "name": "Temporary",
       "glyph": "temporary",
@@ -343,7 +365,7 @@
   ],
   "uuid": "com.dailyops.chatgpt.v1",
   "name": "ChatGPT Controls",
-  "version": "1.2.1.0",
+  "version": "1.2.2.0",
   "profile": "profiles/ChatGPT",
   "selector": {
     "names": [
@@ -373,12 +395,12 @@
         "1,0": "newchat",
         "2,0": "temporary",
         "3,0": "commands",
-        "4,0": "usage",
+        "4,0": "usage5h",
         "0,1": "models",
         "1,1": "projects",
         "2,1": "sidebar",
-        "3,1": "previous",
-        "4,1": "next",
+        "3,1": "next",
+        "4,1": "usageweek",
         "0,2": "chatmode",
         "1,2": "codexmode",
         "2,2": "dictate",
@@ -399,8 +421,8 @@
         "2,1": "rename",
         "3,1": "copylink",
         "4,1": "skills",
-        "0,2": "scheduled",
-        "1,2": "fullview",
+        "0,2": "previous",
+        "1,2": "usage",
         "2,2": "zoomin",
         "3,2": "zoomout",
         "4,2": "resetzoom"

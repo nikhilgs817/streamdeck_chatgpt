@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.2
+
+- New **5h session** and **Weekly** keys: show how much of your ChatGPT/Codex usage limits is used (big %, ring, time to reset), read from the app's own records on this PC. No sign-in needed. Updates every minute; press to refresh.
+- **Back** now returns to your previous profile even when the ChatGPT keys were opened directly in Stream Deck (not through Windows Daily Toolkit).
+
 ## 1.2.1
 
 - Bigger, bolder key labels (+1 pt, extra-bold Segoe UI).

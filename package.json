@@ -1,7 +1,7 @@
 {
   "name": "streamdeck-chatgpt",
   "type": "module",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Unofficial ChatGPT controls for Elgato Stream Deck on Windows",
   "scripts": {
     "build": "node tools/generate.mjs && rollup -c",

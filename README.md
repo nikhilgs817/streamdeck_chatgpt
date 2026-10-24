@@ -1,6 +1,6 @@
 # ChatGPT Controls
 
-Unofficial Elgato Stream Deck plugin for the **ChatGPT desktop app on Windows** (Chat, Work and Codex). Version 1.2.1.0.
+Unofficial Elgato Stream Deck plugin for the **ChatGPT desktop app on Windows** (Chat, Work and Codex). Version 1.2.2.0.
 
 Keys use the app's own documented keyboard shortcuts and `codex://` app links, so they act **inside the desktop app**. Every icon is animated.
 
@@ -8,7 +8,7 @@ Keys use the app's own documented keyboard shortcuts and `codex://` app links, s
 
 ## Install in three steps
 
-1. Download **ChatGPTControls-Installer-1.2.1.0.zip** from [Releases](https://github.com/nikhilgs817/streamdeck_chatgpt/releases/latest).
+1. Download **ChatGPTControls-Installer-1.2.2.0.zip** from [Releases](https://github.com/nikhilgs817/streamdeck_chatgpt/releases/latest).
 2. Right-click the ZIP, choose **Extract All**, and open the extracted folder.
 3. Double-click **Install-ChatGPTControls.cmd**. Wait for the success message; Stream Deck restarts automatically.
 
@@ -16,11 +16,11 @@ No Git, Node.js or build commands are needed. Windows Daily Toolkit is included 
 
 ## The keys
 
-**Page 1 (ChatGPT):** Back · New chat · Temporary · Search · Usage / Models · Projects · Sidebar · Previous · Next / Chat · Codex · Dictate · Send · More
+**Page 1 (ChatGPT):** Back · New chat · Temporary · Search · 5h session / Models · Projects · Sidebar · Next · Weekly / Chat · Codex · Dictate · Send · More
 
-**Page 2 (More):** Main · Settings · Shortcuts · Find · Work / Archive · Pin · Rename · Copy link · Skills / Scheduled · Full view · Zoom in · Zoom out · Reset zoom
+**Page 2 (More):** Main · Settings · Shortcuts · Find · Work / Archive · Pin · Rename · Copy link · Skills / Previous · Usage · Zoom in · Zoom out · Reset zoom
 
-Also in the action list: Quick chat, Go back, Go forward, Copy, Paste, Undo, Redo, Full screen, Focus app and Custom key.
+Also in the action list: Quick chat, Scheduled, Full view, Go back, Go forward, Copy, Paste, Undo, Redo, Full screen, Focus app and Custom key.
 
 | Key | What it does | How |
 |---|---|---|
@@ -42,6 +42,14 @@ Also in the action list: Quick chat, Go back, Go forward, Copy, Paste, Undo, Red
 App links start ChatGPT if it is closed. Shortcut keys first bring ChatGPT to the front and **send nothing if another window stays in front**. If you changed a shortcut under **Settings › Keyboard Shortcuts** in the app, enter the same shortcut in the key's settings. The plugin never reads or stores your account data.
 
 Open or focus ChatGPT to show these keys automatically (needs Windows Daily Toolkit); **Back** returns to your main keys. **More** and **Main** switch between the two pages.
+
+## Usage keys (5h session, Weekly)
+
+![Usage keys](docs/images/usage.png)
+
+**5h session** and **Weekly** show how much of your ChatGPT/Codex limits you have used: a big percentage inside a ring, the time until the window resets, and a colour that turns amber at 60 % and red at 85 %. They update every minute; press one to refresh now.
+
+No sign-in is needed: the numbers come from the app's own records in `%USERPROFILE%\.codex\sessions`, which the app updates as you use it. If nothing has been recorded yet the key shows **NO DATA**; a window that has already reset shows 0 %.
 
 ## Appearance
 
