@@ -1,15 +1,18 @@
 {
   "InstallerId": "ChatGPTControls",
   "Name": "ChatGPT Controls",
-  "PluginId": "com.dailyops.chatgpt.v1",
+  "PluginId": "com.windowstoolkit.chatgpt",
   "PluginFolder": "chatgpt",
   "Profile": "profiles/ChatGPT",
-  "Version": "1.2.3.0",
+  "Version": "2.0.0.0",
   "Repository": "nikhilgs817/streamdeck_chatgpt",
   "Toolkit": {
-    "Version": "2.6.1.0",
-    "Url": "https://github.com/nikhilgs817/windows_daily_toolkit/releases/download/v2.6.1/WindowsDailyToolkit-Installer-2.6.1.0.zip",
-    "Sha256": "c2e1fd3e6e2671b16b7f4a70d54913596569164c5d89cf305e521d60310621c3"
+    "Version": "3.0.0.0",
+    "Url": "https://github.com/nikhilgs817/windows_toolkit/releases/download/v3.0.0/WindowsToolkit-Installer-3.0.0.0.zip",
+    "Sha256": "31506048f13823fdbff39b69dbfb66cb63952bb1a5ffb8c73b477a319b1df0b5"
   },
-  "PackageSha256": "9700f4bd21316aeb30cc4bb4dcfb689d4c4ebd52c8f3977467dcd676b94b9bc2"
+  "PackageSha256": "890b86f389015e8f01cbec8bb2b1db4bab086d1d4c2d7c7f6ba758c7ab7f1a55",
+  "RetiredPluginIds": [
+    "com.dailyops.chatgpt.v1"
+  ]
 }

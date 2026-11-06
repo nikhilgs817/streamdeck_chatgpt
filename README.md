@@ -1,6 +1,6 @@
 # ChatGPT Controls
 
-Unofficial Elgato Stream Deck plugin for the **ChatGPT desktop app on Windows** (Chat, Work and Codex). Version 1.2.3.0.
+Unofficial Elgato Stream Deck plugin for the **ChatGPT desktop app on Windows** (Chat, Work and Codex). Version 2.0.0.0.
 
 Keys use the app's own documented keyboard shortcuts and `codex://` app links, so they act **inside the desktop app**. Every icon is animated.
 
@@ -8,11 +8,11 @@ Keys use the app's own documented keyboard shortcuts and `codex://` app links, s
 
 ## Install in three steps
 
-1. Download **ChatGPTControls-Installer-1.2.3.0.zip** from [Releases](https://github.com/nikhilgs817/streamdeck_chatgpt/releases/latest).
+1. Download **ChatGPTControls-Installer-2.0.0.0.zip** from [Releases](https://github.com/nikhilgs817/streamdeck_chatgpt/releases/latest).
 2. Right-click the ZIP, choose **Extract All**, and open the extracted folder.
 3. Double-click **Install-ChatGPTControls.cmd**. Wait for the success message; Stream Deck restarts automatically.
 
-No Git, Node.js or build commands are needed. Windows Daily Toolkit is included for automatic app switching. The installer verifies files, backs up your setup, keeps your layouts and settings, and rolls back a failed update. [Full installation, update and recovery guide](docs/INSTALL.md).
+No Git, Node.js or build commands are needed. Windows Toolkit is included for automatic app switching. The installer verifies files, backs up your setup, keeps your layouts and settings, and rolls back a failed update. [Full installation, update and recovery guide](docs/INSTALL.md).
 
 ## The keys
 
@@ -41,7 +41,7 @@ Also in the action list: Quick chat, Scheduled, Full view, Go back, Go forward, 
 
 App links start ChatGPT if it is closed. Shortcut keys first bring ChatGPT to the front and **send nothing if another window stays in front**. If you changed a shortcut under **Settings › Keyboard Shortcuts** in the app, enter the same shortcut in the key's settings. The plugin never reads or stores your account data.
 
-Open or focus ChatGPT to show these keys automatically (needs Windows Daily Toolkit); **Back** returns to your main keys. **More** and **Main** switch between the two pages.
+Open or focus ChatGPT to show these keys automatically (needs Windows Toolkit); **Back** returns to your main keys. **More** and **Main** switch between the two pages.
 
 ## Usage keys (5h session, Weekly)
 
@@ -81,7 +81,7 @@ npm run build:installer
 npm run test:installer   # Windows only
 ```
 
-The installer ZIP is `dist/ChatGPTControls-Installer-<version>.zip`; the plugin package is `dist/com.dailyops.chatgpt.v1.streamDeckPlugin`. Personal profiles, credentials, account data and build output are excluded from Git.
+The installer ZIP is `dist/ChatGPTControls-Installer-<version>.zip`; the plugin package is `dist/com.windowstoolkit.chatgpt.streamDeckPlugin`. Personal profiles, credentials, account data and build output are excluded from Git.
 
 ## Known limits
 
@@ -92,6 +92,6 @@ The installer ZIP is `dist/ChatGPTControls-Installer-<version>.zip`; the plugin 
 ## References
 
 - [ChatGPT desktop app commands and shortcuts](https://learn.chatgpt.com/docs/reference/commands)
-- [Windows Daily Toolkit](https://github.com/nikhilgs817/windows_daily_toolkit)
+- [Windows Toolkit](https://github.com/nikhilgs817/windows_toolkit)
 
 Not affiliated with or endorsed by OpenAI. ChatGPT is a trademark of OpenAI. The icons are original artwork. MIT license.

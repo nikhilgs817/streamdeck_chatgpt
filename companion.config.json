@@ -363,9 +363,9 @@
       "requiresBinding": true
     }
   ],
-  "uuid": "com.dailyops.chatgpt.v1",
+  "uuid": "com.windowstoolkit.chatgpt",
   "name": "ChatGPT Controls",
-  "version": "1.2.3.0",
+  "version": "2.0.0.0",
   "profile": "profiles/ChatGPT",
   "selector": {
     "names": [
