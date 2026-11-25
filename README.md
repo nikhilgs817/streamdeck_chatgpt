@@ -1,6 +1,6 @@
 # ChatGPT Controls
 
-Unofficial Elgato Stream Deck plugin for the **ChatGPT desktop app on Windows** (Chat, Work and Codex). Version 2.0.0.0.
+Unofficial Elgato Stream Deck plugin for the **ChatGPT desktop app on Windows** (Chat, Work and Codex). Version 2.1.0.0.
 
 Keys use the app's own documented keyboard shortcuts and `codex://` app links, so they act **inside the desktop app**. Every icon is animated.
 
@@ -8,7 +8,7 @@ Keys use the app's own documented keyboard shortcuts and `codex://` app links, s
 
 ## Install in three steps
 
-1. Download **ChatGPTControls-Installer-2.0.0.0.zip** from [Releases](https://github.com/nikhilgs817/streamdeck_chatgpt/releases/latest).
+1. Download **ChatGPTControls-Installer-2.1.0.0.zip** from [Releases](https://github.com/nikhilgs817/streamdeck_chatgpt/releases/latest).
 2. Right-click the ZIP, choose **Extract All**, and open the extracted folder.
 3. Double-click **Install-ChatGPTControls.cmd**. Wait for the success message; Stream Deck restarts automatically.
 
@@ -55,15 +55,19 @@ No sign-in is needed: the numbers come from the app's own records in `%USERPROFI
 
 ![Styles](docs/images/styles.png)
 
+**Glass** is the default: frosted dark keys, a soft rim light, Title Case labels and an animated icon on every key. Pick another look for one key, or press **Use this look on all keys** in any key's settings to restyle the whole deck.
+
 | Style | Look |
 |---|---|
-| **ChatGPT Dark** (default) | Near-black keys, white line icons, ChatGPT-green accents, bold Segoe UI labels |
+| **Glass** (default) | Frosted dark glass, a quiet glow and Title Case labels |
+| **ChatGPT Dark** | Near-black keys, white line icons, ChatGPT-green accents, bold Segoe UI labels |
 | **ChatGPT Light** | White keys with the same icons |
-| **Colourful** | Coloured icons on dark glass |
 | **Vivid** | White icons on a bright gradient |
+| **Neon** | Coloured icons with a glowing edge on dark glass (formerly Colourful) |
+| **Mono** | Monochrome icons with a single colour dot |
 | **Pro** | Restrained slate keys with a thin accent strip |
 
-Colourful, Vivid and Pro use the new **ChatGPT** colour by default and accept any of the other colours. Every icon has its own animation in a six-second loop at 12 fps; labels stay still. Turn **Gentle loop** off for a still key. You can also pick another icon, change the label or use your own picture.
+Under **Look** you can also pick any of 40+ colour themes or two colours of your own, Full, Glow only, Icon only or Still animation at four speeds, glow strength, a press ripple, the label case and your own label (up to 18 letters) or picture. Keys go still while Windows **Animation effects** is off. The design is shared with [Windows Toolkit](https://github.com/nikhilgs817/windows_toolkit).
 
 ![Settings](docs/images/settings.png)
 
