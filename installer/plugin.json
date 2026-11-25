@@ -11,7 +11,7 @@
     "Url": "https://github.com/nikhilgs817/windows_toolkit/releases/download/v3.0.0/WindowsToolkit-Installer-3.0.0.0.zip",
     "Sha256": "31506048f13823fdbff39b69dbfb66cb63952bb1a5ffb8c73b477a319b1df0b5"
   },
-  "PackageSha256": "890b86f389015e8f01cbec8bb2b1db4bab086d1d4c2d7c7f6ba758c7ab7f1a55",
+  "PackageSha256": "08052f024fc9e6d73da05a01c452ace79ca907cd2ca366c2470c2169a6ad7b33",
   "RetiredPluginIds": [
     "com.dailyops.chatgpt.v1"
   ]
